@@ -16,15 +16,7 @@ const SetupPage = () => {
         }
     },[isOpen, onOpen]);
 
-    return (
-        <div className='p-4'>
-            {/*<UserButton afterSignOutUrl="/"/>*/}
-            {/*<Modal title='Text' description="Text Desc" isOpen onClose={() => {}}>*/}
-            {/*    Hello*/}
-            {/*</Modal>*/}
-            Root page
-        </div>
-    )
+    return null;
 }
 
 export default SetupPage;

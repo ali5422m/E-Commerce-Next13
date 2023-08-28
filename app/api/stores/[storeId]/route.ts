@@ -1,6 +1,5 @@
 import {NextResponse} from "next/server";
 import {auth} from "@clerk/nextjs";
-import {redirect} from "next/navigation";
 import prismadb from "@/lib/prismadb";
 
 export async function PATCH (req: Request, { params }: {params: { storeId: string }}) {

@@ -4,7 +4,7 @@ import * as z from 'zod';
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 
-import {useStoreModal} from "@/hooks/use-store-module";
+import {useStoreModal} from "@/hooks/use-store-modal";
 import {Modal} from "@/components/ui/modal";
 import {Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Button} from "@/components/ui/button";

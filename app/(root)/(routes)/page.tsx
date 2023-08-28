@@ -3,7 +3,7 @@
 // import {UserButton} from "@clerk/nextjs";
 
 import {Modal} from "@/components/ui/modal";
-import {useStoreModal} from "@/hooks/use-store-module";
+import {useStoreModal} from "@/hooks/use-store-modal";
 import {useEffect} from "react";
 
 const SetupPage = () => {

@@ -3,7 +3,7 @@ import {redirect} from "next/navigation";
 import prismadb from "@/lib/prismadb";
 import Navbar from "@/components/navbar";
 
-export default async function DashboardLayout({ children, params }: {
+async function DashboardLayout({ children, params }: {
     children: React.ReactNode;
     params: { storeId: string }
  }) {
@@ -31,4 +31,6 @@ export default async function DashboardLayout({ children, params }: {
         </div>
     )
 }
+
+export default DashboardLayout;
 

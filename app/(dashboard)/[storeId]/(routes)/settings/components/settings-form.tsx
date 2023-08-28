@@ -58,7 +58,6 @@ const SettingsForm: React.FC<SettingFormProps> = ({initialDate}) => {
     const onDelete = async () => {
         try {
             setLoading(true);
-            console.log("del")
             await axios.delete(`/api/stores/${params.storeId}`);
             router.refresh();
             router.push('/');

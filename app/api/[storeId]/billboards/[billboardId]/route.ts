@@ -61,7 +61,7 @@ export async function PATCH (req: Request, { params }: {params: { storeId: strin
 
         const billboard = await prismadb.billboard.updateMany({
             where: {
-                id: params.storeId
+                id: params.billboardId
             },
             data: {
                 label,
@@ -103,7 +103,7 @@ export async function DELETE(
             return new NextResponse("Unauthorized", { status: 403 })
         }
 
-        const billboard = await prismadb.store.deleteMany({
+        const billboard = await prismadb.billboard.deleteMany({
             where: {
                 id: params.billboardId,
             }

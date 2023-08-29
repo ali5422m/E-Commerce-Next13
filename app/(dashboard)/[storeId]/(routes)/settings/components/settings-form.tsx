@@ -47,6 +47,7 @@ const SettingsForm: React.FC<SettingFormProps> = ({initialDate}) => {
             setLoading(true);
             await axios.patch(`/api/stores/${params.storeId}`, data);
             router.refresh();
+            router.push(`/${params.storeId}/billboards`)
             toast.success("Store updated.");
         } catch (error) {
             toast.error("Something went wrong.");

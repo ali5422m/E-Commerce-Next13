@@ -11,6 +11,7 @@ import ApiList from "@/components/ui/api-list";
 import {columns, ProductColumn} from "@/app/(dashboard)/[storeId]/(routes)/products/components/columns";
 
 
+
 interface ProductClientProps {
     data: ProductColumn[];
 }
@@ -35,7 +36,7 @@ const ProductClient: React.FC<ProductClientProps> = ({data}) => {
             <DataTable
                 columns={columns}
                 data={data}
-                searchKey= "label"
+                searchKey= "name"
                 />
             <Heading
                 title= "API"

@@ -55,6 +55,7 @@ const ProductForm: React.FC<ProductFormProps> = ({initialData, categories, color
     const action = initialData ? "Save changes" : "Create";
 
 
+
     const form = useForm<ProductFormValue>({
         resolver: zodResolver(formSchema),
         defaultValues: initialData ? {
@@ -76,7 +77,7 @@ const ProductForm: React.FC<ProductFormProps> = ({initialData, categories, color
         try {
             setLoading(true);
             if (initialData) {
-                await axios.patch(`/api/${params.storeId}/products/${params.billboardId}`, data);
+                await axios.patch(`/api/${params.storeId}/products/${params.productId}`, data);
             }else {
                 await axios.post(`/api/${params.storeId}/products`, data);
             }
@@ -208,6 +209,7 @@ const ProductForm: React.FC<ProductFormProps> = ({initialData, categories, color
                                             ))}
                                         </SelectContent>
                                     </Select>
+                                    <FormMessage />
                                 </FormItem>
                             )}
                         />
@@ -242,6 +244,7 @@ const ProductForm: React.FC<ProductFormProps> = ({initialData, categories, color
                                             ))}
                                         </SelectContent>
                                     </Select>
+                                    <FormMessage />
                                 </FormItem>
                             )}
                         />
@@ -266,20 +269,17 @@ const ProductForm: React.FC<ProductFormProps> = ({initialData, categories, color
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <span>ali</span>
-                                            <span>ali</span>
-                                            <span>ali</span>
-                                            <span>ali</span>
-                                            {/*{colors.map((color) => (*/}
-                                            {/*    <SelectItem*/}
-                                            {/*        key={color.id}*/}
-                                            {/*        value={color.id}*/}
-                                            {/*    >*/}
-                                            {/*        {color.name}*/}
-                                            {/*    </SelectItem>*/}
-                                            {/*))}*/}
+                                            {colors.map((color) => (
+                                                <SelectItem
+                                                    key={color.id}
+                                                    value={color.id}
+                                                >
+                                                    {color.name}
+                                                </SelectItem>
+                                            ))}
                                         </SelectContent>
                                     </Select>
+                                    <FormMessage />
                                 </FormItem>
                             )}
                         />

@@ -6,6 +6,7 @@ import {formatter} from "@/lib/utils";
 import {ProductColumn} from "@/app/(dashboard)/[storeId]/(routes)/products/components/columns";
 import ProductClient from "@/app/(dashboard)/[storeId]/(routes)/products/components/client";
 
+
 const ProductsPage = async ({params}: { params: { storeId: string } }) => {
     const products = await prismadb.product.findMany({
         where: {
@@ -28,7 +29,7 @@ const ProductsPage = async ({params}: { params: { storeId: string } }) => {
         isArchived: item.isArchived,
         price: formatter.format(item.price.toNumber()),
         category: item.category.name,
-        size: item.category.name,
+        size: item.size.name,
         color: item.color.value,
         createdAt: format(item.createdAt, "MMMM do, yyyy")
     }));

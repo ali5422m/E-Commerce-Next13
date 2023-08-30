@@ -3,6 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table"
 import CellAction from "@/app/(dashboard)/[storeId]/(routes)/products/components/cell-action";
 
+
 export type ProductColumn = {
     id: string;
     name: string;

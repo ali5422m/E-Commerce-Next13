@@ -11,7 +11,7 @@ export async function GET(
             return new NextResponse('Size id is required', {status:400})
         }
 
-        const size = await prismadb.size.deleteMany({
+        const size = await prismadb.size.findUnique({
             where: {
                 id: params.sizeId,
             }

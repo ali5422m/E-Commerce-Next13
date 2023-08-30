@@ -11,7 +11,7 @@ export async function GET(
             return new NextResponse('Color id is required', {status:400})
         }
 
-        const color = await prismadb.color.deleteMany({
+        const color = await prismadb.color.findUnique({
             where: {
                 id: params.colorId,
             }
